@@ -2,6 +2,7 @@
 
 const assert = require('assert');
 const should = require('should');
+const Navi = require('..');
 
 describe('Array', function() {
     describe('#indexOf()', function() {
