@@ -4,6 +4,7 @@
   "description": "A javascript location helper",
   "main": "./navi.js",
   "scripts": {
+  	"prepare": "npm run build",
     "test": "make test",
     "test-browser": "make test-browser",
     "lint": "make lint",
