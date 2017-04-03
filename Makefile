@@ -32,6 +32,6 @@ test-browser:
 	./node_modules/.bin/zuul --local 4000 -- $(BROWSERTESTS)
 
 test-cov:
-	./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov $(REQUIRED)
+	./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec $(REQUIRED)
 
 .PHONY: lint test
