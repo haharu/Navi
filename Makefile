@@ -1,5 +1,6 @@
 NODETESTS ?= test/*.js test/node/*.js
 BROWSERTESTS ?= test/*.js test/client/*.js
+REQUIRED = --require should
 
 lint:
 	@./node_modules/.bin/eslint ./lib --debug
@@ -22,7 +23,7 @@ test-node:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
 		--harmony \
 		--reporter spec \
-		--require should \
+		$(REQUIRED) \
 		--compilers js:babel-register \
 		--growl \
 		$(NODETESTS)
@@ -31,6 +32,6 @@ test-browser:
 	./node_modules/.bin/zuul --local 4000 -- $(BROWSERTESTS)
 
 test-cov:
-	./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --require should --report lcovonly -- -R spec && codecov
+	./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov $(REQUIRED)
 
 .PHONY: lint test
