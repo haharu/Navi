@@ -26,7 +26,8 @@ test-node:
 		$(REQUIRED) \
 		--compilers js:babel-register \
 		--growl \
-		$(NODETESTS)
+		$(NODETESTS) \
+		--bail
 
 test-browser:
 	./node_modules/.bin/zuul --local 4000 -- $(BROWSERTESTS)
@@ -35,8 +36,9 @@ test-cov:
 	./node_modules/.bin/istanbul cover \
 	./node_modules/mocha/bin/_mocha \
 		--report lcovonly \
-		-- -R spec \
+		-- -u exports \
 		$(REQUIRED) \
-		$(NODETESTS)
+		$(NODETESTS) \
+		--bail
 
 .PHONY: lint test
