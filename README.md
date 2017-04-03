@@ -1,4 +1,4 @@
 [![Build Status](https://travis-ci.org/haharu/navi.svg?branch=master)](https://travis-ci.org/haharu/navi)
-[![Coverage Status](https://coveralls.io/repos/github/haharu/navi/badge.svg)](https://coveralls.io/github/haharu/navi)
+[![codecov](https://codecov.io/gh/haharu/navi/branch/master/graph/badge.svg)](https://codecov.io/gh/haharu/navi)
 # Navi
 a painless url helper
